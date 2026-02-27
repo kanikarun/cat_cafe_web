@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/product_detail.css') }}">
+
+<main class="detail-container">
+    <nav class="breadcrumb">
+        <a href="{{ url_for('product') }}" class="back-link">
+            <span class="arrow">←</span> Back to Products
+        </a>
+    </nav>
+
+    <div class="detail-grid">
+        <div class="detail-image-wrapper">
+            <div class="image-glass-frame">
+                <img src="{{ url_for('static', filename=item.img) }}" alt="{{ item.name }}" class="main-product-img">
+            </div>
+        </div>
+
+        <div class="detail-content">
+            <header class="detail-header">
+                <span class="category-tag">Premium Suite</span>
+                <h1 class="detail-title">{{ item.name }}</h1>
+                <div class="price-badge">{{ item.price }}<span class="period">/month</span></div>
+            </header>
+
+            <div class="detail-description">
+                <h3>Overview</h3>
+                <p>{{ item.desc }}</p>
+
+                <ul class="feature-list">
+                    <li><span class="icon">✓</span> Real-time cloud synchronization</li>
+                    <li><span class="icon">✓</span> Automated tax-ready reporting</li>
+                    <li><span class="icon">✓</span> 24/7 Priority feline support</li>
+                </ul>
+            </div>
+
+            <div class="detail-actions">
+                <div class="quantity-selector">
+                    <button class="qty-btn minus" type="button">−</button>
+                    <input type="number" value="1" min="1" class="qty-input" readonly>
+                    <button class="qty-btn plus" type="button">+</button>
+                </div>
+                <button class="btn-add-to-cart">Add to Cart</button>
+            </div>
+
+            <footer class="detail-footer">
+                <p class="shipping-info">✨ Instant digital activation upon purchase.</p>
+            </footer>
+        </div>
+    </div>
+</main>
+
+<script>
+    // Simple logic for the quantity box
+    const plus = document.querySelector(".plus"),
+          minus = document.querySelector(".minus"),
+          num = document.querySelector(".qty-input");
+
+    plus.addEventListener("click", () => { num.value = parseInt(num.value) + 1; });
+    minus.addEventListener("click", () => {
+        if(parseInt(num.value) > 1) { num.value = parseInt(num.value) - 1; }
+    });
+</script>
+{% endblock %}

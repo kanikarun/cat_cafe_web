@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/product.css') }}">
+
+<section class="product-section">
+
+    <!-- Editorial Page Header -->
+    <div class="product-container">
+        <div class="product-header">
+            <div class="header-inner">
+                <h1 class="product-title">The <em>Menu</em></h1>
+                <p class="product-subtitle">Crafted with Intention — Issue No. 04 · 2026</p>
+            </div>
+            <div class="header-rule"></div>
+        </div>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="product-container">
+        <div class="product-grid-4">
+            {% for id, info in products.items() %}
+            <div class="modern-card">
+
+                <!-- Image -->
+                <div class="card-image-box">
+                    <img src="{{ url_for('static', filename=info.img) }}" alt="{{ info.name }}">
+                    <div class="card-image-overlay"></div>
+                </div>
+
+                <!-- Body -->
+                <div class="card-body">
+                    <div class="card-meta">
+                        <h3 class="name">{{ info.name }}</h3>
+                        <span class="price">{{ info.price }}</span>
+                    </div>
+
+                    <p class="description">{{ info.desc }}</p>
+
+                    <div class="card-footer">
+                        <a href="{{ url_for('product_detail', product_id=id) }}" class="see-more-btn">
+                            View Details
+                            <svg xmlns="http://www.w3.org/2000/svg" class="arrow-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </a>
+                        <button class="btn-action">Add to Cart</button>
+                    </div>
+                </div>
+
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</section>
+{% endblock %}

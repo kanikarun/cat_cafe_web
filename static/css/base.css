@@ -1,0 +1,140 @@
+:root {
+    --primary: #1e293b;
+    --accent: #2563eb;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.4);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-main);
+    line-height: 1.5;
+    background-color: #fff;
+}
+
+/* --- Navigation --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+
+/* --- Shared Footer --- */
+.footer {
+    background: #f8fafc;
+    padding: 4rem 2rem 2rem;
+    border-top: 1px solid #e2e8f0;
+    font-family: 'Inter', sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex; /* Switched from grid to flex */
+    justify-content: space-between; /* Pushes content to far left and far right */
+    align-items: flex-start;
+    flex-wrap: wrap; /* Ensures it stacks nicely on mobile */
+    gap: 2rem;
+}
+
+/* --- Brand Section (Left) --- */
+.footer-brand {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-brand .logo-text {
+    font-family: 'Lora', serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0f172a;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+/* --- Links Section (Right) --- */
+.footer-links {
+    display: flex;
+    gap: 4rem; /* Spacing between the "Product" and "Company" columns */
+    text-align: left;
+}
+
+.footer-col h4 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #1e293b;
+    margin-bottom: 1.5rem;
+}
+
+.footer-col a {
+    display: block;
+    text-decoration: none;
+    color: #64748b;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+    transition: color 0.2s;
+}
+
+.footer-col a:hover {
+    color: #2563eb;
+}
+
+/* --- Bottom Copyright Bar --- */
+.footer-bottom {
+    max-width: 1200px;
+    margin: 4rem auto 0;
+    padding-top: 2rem;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between; /* Aligns copyright left and social/terms right */
+    font-size: 0.8rem;
+    color: #94a3b8;
+}

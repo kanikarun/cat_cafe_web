@@ -4,29 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catty Cafe - Business Simplified</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
 </head>
 <body>
 
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">
-                <div class="logo-icon"></div>
-                <span>CATTY CAFE</span>
+
+            <!-- Logo -->
+            <a href="{{ url_for('home') }}" class="logo">CATTY CAFE</a>
+
+            <!-- Hamburger Toggle (mobile only) -->
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Nav Menu -->
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-links">
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('product') }}">Product</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Franchise</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <a href="/login" class="nav-btn nav-btn-ghost">Log In</a>
+                    <a href="/register" class="nav-btn nav-btn-solid">Get Started</a>
+                </div>
             </div>
 
-            <ul class="nav-links">
-            <li><a href="{{ url_for('home') }}">Home</a></li>
-            <li><a href="{{ url_for('product') }}">Product</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Franchise</a></li>
-            </ul>
-
-            <div class="nav-actions">
-                <a href="/login" class="btn-action" style="text-decoration: none" >Log In</a>
-                <a href="/register" class="btn-action" style="text-decoration: none">Get Started</a>
-            </div>
         </div>
     </nav>
 
@@ -34,32 +44,53 @@
         {% block content %}{% endblock %}
     </main>
 
-<footer class="footer">
-    <div class="footer-container">
-        <div class="footer-brand">
-            <span class="logo-text">CATTY CAFE</span>
-            <p>Sophisticated finance tools for the modern entrepreneur.</p>
-        </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="logo-text">CATTY CAFE</span>
+                <p>Sophisticated finance tools for the modern entrepreneur.</p>
+            </div>
 
-        <div class="footer-links">
-<div class="footer-col">
-    <h4>Product</h4>
-    <a href="{{ url_for('product') }}">Features</a> <a href="{{ url_for('product') }}">Pricing</a>  </div>
-            <div class="footer-col">
-                <h4>Company</h4>
-                <a href="#">About</a>
-                <a href="#">Contact</a>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <a href="{{ url_for('product') }}">Features</a>
+                    <a href="{{ url_for('product') }}">Pricing</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="footer-bottom">
-        <span>&copy; 2026 Catty Cafe. All rights reserved.</span>
-        <div class="footer-legal-links">
-            <a href="#" style="margin-left: 20px;">Privacy</a>
-            <a href="#" style="margin-left: 20px;">Terms</a>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Catty Cafe. All rights reserved.</span>
+            <div class="footer-legal-links">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
+
+    <script>
+        const toggle = document.getElementById('navToggle');
+        const menu = document.getElementById('navMenu');
+
+        toggle.addEventListener('click', () => {
+            menu.classList.toggle('open');
+            toggle.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.nav-links a, .nav-actions a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.remove('open');
+                toggle.classList.remove('active');
+            });
+        });
+    </script>
+
 </body>
 </html>

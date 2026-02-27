@@ -1,0 +1,452 @@
+/* ============================================
+   CATTY CAFE — Auth Pages (Login & Register)
+   Split-screen editorial aesthetic
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
+:root {
+    --sky-blue: #87CEEB;
+    --sky-blue-deep: #5bb8e0;
+    --text-dark: #0f172a;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+    --bg-light: #f8fafc;
+}
+
+/* ============================================
+   FULL PAGE LAYOUT — hide navbar/footer
+   ============================================ */
+
+/* Push content below navbar */
+.auth-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+    padding-top: 68px; /* navbar height */
+}
+
+/* Register: form on left, image on right */
+.auth-page-register {
+    grid-template-columns: 1fr 1fr;
+}
+
+/* ============================================
+   LEFT PANEL — Brand / Image
+   ============================================ */
+
+.auth-left {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: calc(100vh - 68px);
+}
+
+.auth-left-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.auth-left-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    animation: authImgZoom 20s ease-in-out infinite alternate;
+}
+
+@keyframes authImgZoom {
+    from { transform: scale(1); }
+    to   { transform: scale(1.06); }
+}
+
+.auth-left-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(10, 15, 30, 0.55) 0%,
+        rgba(10, 15, 30, 0.75) 100%
+    );
+}
+
+.auth-left-content {
+    position: relative;
+    z-index: 2;
+    padding: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex-grow: 1;
+    justify-content: flex-end;
+    padding-bottom: 5rem;
+}
+
+.auth-brand-logo {
+    height: 64px;
+    width: auto;
+    max-width: 240px;
+    object-fit: contain;
+    object-position: left center;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+}
+
+.auth-brand-tagline {
+    font-family: 'Lora', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 400;
+    color: #ffffff;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.auth-brand-tagline em {
+    font-style: italic;
+    color: var(--sky-blue);
+}
+
+.auth-left-footer {
+    position: relative;
+    z-index: 2;
+    padding: 2rem 3.5rem;
+}
+
+.auth-left-issue {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: rgba(255,255,255,0.35);
+}
+
+/* Decorative large background text */
+.auth-left-content::before {
+    content: 'CC';
+    position: absolute;
+    bottom: -20px;
+    right: -10px;
+    font-family: 'Lora', serif;
+    font-size: 14rem;
+    color: rgba(255,255,255,0.03);
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* ============================================
+   RIGHT PANEL — Form
+   ============================================ */
+
+.auth-right {
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 2rem;
+    overflow-y: auto;
+}
+
+.auth-form-wrap {
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Mobile logo (shown only on small screens) */
+.auth-mobile-logo {
+    display: none;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+}
+
+.auth-mobile-logo-img {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* ============================================
+   FORM HEADER
+   ============================================ */
+
+.auth-form-header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.auth-title {
+    font-family: 'Lora', serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 400;
+    color: var(--text-dark);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+.auth-title em {
+    font-style: italic;
+    color: var(--sky-blue);
+}
+
+.auth-subtitle {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ============================================
+   FORM FIELDS
+   ============================================ */
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.auth-field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.auth-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.auth-label {
+    font-size: 0.62rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--text-muted);
+}
+
+/* Input wrapper for password toggle */
+.auth-input-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.auth-input {
+    width: 100%;
+    background: #f0f7ff;
+    border: 1px solid #dbeafe;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-family: 'Lora', serif;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auth-input::placeholder {
+    color: #cbd5e1;
+    font-style: italic;
+}
+
+.auth-input:focus {
+    border-color: var(--sky-blue);
+    box-shadow: 0 0 0 3px rgba(135, 206, 235, 0.15);
+    background: #ffffff;
+}
+
+/* Password inside wrapper takes full width minus icon */
+.auth-input-wrap .auth-input {
+    padding-right: 44px;
+}
+
+/* Eye toggle button */
+.auth-eye-btn {
+    position: absolute;
+    right: 14px;
+    bottom: 50%;
+    transform: translateY(50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #94a3b8;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s ease;
+}
+
+.auth-eye-btn:hover { color: var(--text-dark); }
+
+.eye-icon {
+    width: 18px;
+    height: 18px;
+}
+
+/* Forgot password */
+.auth-forgot {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-top: 4px;
+    align-self: flex-end;
+    transition: color 0.2s;
+}
+
+.auth-forgot:hover { color: var(--sky-blue-deep); }
+
+/* ============================================
+   TERMS CHECKBOX
+   ============================================ */
+
+.auth-terms {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.auth-checkbox {
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+    accent-color: var(--text-dark);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.auth-terms-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    cursor: pointer;
+}
+
+.auth-terms-link {
+    color: var(--text-dark);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 0.2s;
+}
+
+.auth-terms-link:hover { color: var(--sky-blue-deep); }
+
+/* ============================================
+   SUBMIT BUTTON
+   ============================================ */
+
+.auth-submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 15px 24px;
+    background: var(--text-dark);
+    color: #ffffff;
+    border: none;
+    border-radius: 999px;
+    font-family: 'Lora', serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 8px;
+}
+
+.auth-submit-btn svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+}
+
+.auth-submit-btn:hover {
+    background: var(--sky-blue);
+    color: var(--text-dark);
+    box-shadow: 0 15px 35px rgba(135, 206, 235, 0.35);
+    transform: translateY(-2px);
+}
+
+.auth-submit-btn:hover svg {
+    transform: translateX(4px);
+}
+
+/* ============================================
+   SWITCH LINK
+   ============================================ */
+
+.auth-switch {
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.auth-switch-link {
+    color: var(--text-dark);
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 1px solid var(--text-dark);
+    padding-bottom: 1px;
+    transition: color 0.2s, border-color 0.2s;
+    margin-left: 4px;
+}
+
+.auth-switch-link:hover {
+    color: var(--sky-blue-deep);
+    border-color: var(--sky-blue-deep);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+    .auth-page {
+        grid-template-columns: 1fr;
+        padding-top: 68px;
+    }
+
+    /* Hide left panel on mobile */
+    .auth-left {
+        display: none;
+    }
+
+    /* Register page: form was on left — keep it visible */
+    .auth-page-register .auth-right {
+        order: 1;
+    }
+
+    .auth-right {
+        min-height: calc(100vh - 68px);
+        align-items: flex-start;
+        padding-top: 3rem;
+    }
+
+    .auth-mobile-logo {
+        display: flex;
+    }
+
+    /* Show logo_text inside the left panel content on mobile */
+    .auth-brand-logo {
+        display: block;
+    }
+
+    .auth-field-row {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-form-wrap {
+        max-width: 100%;
+    }
+}

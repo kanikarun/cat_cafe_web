@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}">
+
+<div class="auth-page">
+
+    <!-- Left Panel — Brand Visual -->
+    <div class="auth-left">
+        <div class="auth-left-bg">
+            <img src="{{ url_for('static', filename='image/element/LABEL.jpg') }}" alt="Catty Cafe">
+            <div class="auth-left-overlay"></div>
+        </div>
+
+        <div class="auth-left-content">
+            <img src="{{ url_for('static', filename='image/element/logo_text.png') }}" alt="Catty Cafe" class="auth-brand-logo">
+            <p class="auth-brand-tagline">Where every cup<br>tells a <em>story.</em></p>
+        </div>
+
+        <div class="auth-left-footer">
+            <span class="auth-left-issue">Est. 2021 · Phnom Penh</span>
+        </div>
+    </div>
+
+    <!-- Right Panel — Form -->
+    <div class="auth-right">
+        <div class="auth-form-wrap">
+
+            <!-- Mobile logo (hidden on desktop) -->
+            <div class="auth-mobile-logo">
+                <img src="{{ url_for('static', filename='image/element/logo_text.png') }}" alt="Catty Cafe" class="auth-mobile-logo-img">
+            </div>
+
+            <div class="auth-form-header">
+                <h1 class="auth-title">Welcome <em>back.</em></h1>
+                <p class="auth-subtitle">Sign in to your account to continue.</p>
+            </div>
+
+            <form class="auth-form" method="POST" action="/login">
+
+                <div class="auth-field">
+                    <label class="auth-label">Email Address</label>
+                    <input type="email" name="email" placeholder="hello@yourmail.com" class="auth-input" required>
+                </div>
+
+                <div class="auth-field">
+                    <label class="auth-label">Password</label>
+                    <div class="auth-input-wrap">
+                        <input type="password" name="password" id="loginPassword" placeholder="Your password" class="auth-input" required>
+                        <button type="button" class="auth-eye-btn" onclick="togglePassword('loginPassword', this)" aria-label="Toggle password">
+                            <svg class="eye-icon eye-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <svg class="eye-icon eye-closed" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" style="display:none">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88" />
+                            </svg>
+                        </button>
+                    </div>
+                    <a href="#" class="auth-forgot">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="auth-submit-btn">
+                    Sign In
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </button>
+
+            </form>
+
+            <p class="auth-switch">
+                Don't have an account?
+                <a href="/register" class="auth-switch-link">Get Started</a>
+            </p>
+
+        </div>
+    </div>
+
+</div>
+
+<script>
+function togglePassword(id, btn) {
+    const input = document.getElementById(id);
+    const isPassword = input.type === 'password';
+    input.type = isPassword ? 'text' : 'password';
+    btn.querySelector('.eye-open').style.display  = isPassword ? 'none'  : 'block';
+    btn.querySelector('.eye-closed').style.display = isPassword ? 'block' : 'none';
+}
+</script>
+
+{% endblock %}

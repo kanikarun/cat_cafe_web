@@ -151,6 +151,9 @@ def product_detail(product_id):
     if not item:
         return "Product not found", 404
     return render_template('product_detail.html', item=item)
+@app.route('/about_us')
+def about_us():
+    return render_template('about.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

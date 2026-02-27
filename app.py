@@ -154,6 +154,8 @@ def product_detail(product_id):
 @app.route('/about_us')
 def about_us():
     return render_template('about.html')
-
+@app.route('/franchise')
+def franchise():
+    return render_template('franchise.html')
 if __name__ == '__main__':
     app.run(debug=True)

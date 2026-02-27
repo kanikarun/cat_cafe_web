@@ -1,0 +1,345 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/franchise.css') }}">
+
+<!-- ===================== HERO ===================== -->
+<section class="fr-hero">
+    <div class="fr-hero-bg">
+        <img src="{{ url_for('static', filename='image/element/LABEL.jpg') }}" alt="Catty Cafe Franchise">
+        <div class="fr-hero-overlay"></div>
+    </div>
+    <div class="fr-hero-content">
+        <p class="fr-hero-eyebrow">Franchise Opportunity · 2026</p>
+        <h1 class="fr-hero-title">Own a piece<br>of <em>something</em><br>beautiful.</h1>
+        <p class="fr-hero-sub">Join the Catty Cafe family and bring an extraordinary café experience to your city.</p>
+        <a href="#apply" class="fr-hero-btn">Apply Now</a>
+    </div>
+    <div class="fr-hero-badge">
+        <span class="badge-num">3+</span>
+        <span class="badge-label">Locations<br>Worldwide</span>
+    </div>
+</section>
+
+<!-- ===================== SECTION 01 — WHY US ===================== -->
+<section class="fr-section bg-white">
+    <div class="fr-container">
+
+        <div class="fr-section-header">
+            <span class="fr-section-num">01</span>
+            <div class="fr-heading-wrap">
+                <h2 class="fr-heading">Why <em>Catty Cafe</em>?</h2>
+                <p class="fr-label">The Case for Partnership</p>
+            </div>
+            <div class="fr-rule"></div>
+        </div>
+
+        <div class="why-grid">
+
+            <div class="why-feature">
+                <div class="why-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.746 3.746 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+                    </svg>
+                </div>
+                <h3 class="why-title">Proven Brand</h3>
+                <p class="why-desc">A premium identity with loyal customers across multiple markets. You're not starting from zero — you're inheriting years of brand equity.</p>
+            </div>
+
+            <div class="why-feature">
+                <div class="why-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5" />
+                    </svg>
+                </div>
+                <h3 class="why-title">Full Training</h3>
+                <p class="why-desc">From barista craft to daily operations, our comprehensive onboarding program ensures your team is fully equipped from day one.</p>
+            </div>
+
+            <div class="why-feature">
+                <div class="why-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
+                    </svg>
+                </div>
+                <h3 class="why-title">Supply Chain</h3>
+                <p class="why-desc">Direct access to our ethically sourced beans, proprietary recipes, and supplier network — quality guaranteed at every location.</p>
+            </div>
+
+            <div class="why-feature">
+                <div class="why-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+                    </svg>
+                </div>
+                <h3 class="why-title">Ongoing Support</h3>
+                <p class="why-desc">Dedicated franchise advisors, marketing assets, and a community of partners. You're in business for yourself, but never by yourself.</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- ===================== SECTION 02 — PACKAGES ===================== -->
+<section class="fr-section bg-slate">
+    <div class="fr-container">
+
+        <div class="fr-section-header">
+            <span class="fr-section-num">02</span>
+            <div class="fr-heading-wrap">
+                <h2 class="fr-heading">Investment <em>Packages</em></h2>
+                <p class="fr-label">Choose Your Entry Point</p>
+            </div>
+            <div class="fr-rule"></div>
+        </div>
+
+        <div class="packages-grid">
+
+            <!-- Starter -->
+            <div class="package-card">
+                <div class="package-top">
+                    <span class="package-tier">Starter</span>
+                    <div class="package-price">
+                        <span class="price-from">From</span>
+                        <span class="price-num">$25,000</span>
+                    </div>
+                    <p class="package-ideal">Ideal for kiosks & small café spaces under 50 sqm.</p>
+                </div>
+                <ul class="package-features">
+                    <li>Brand license &amp; full identity kit</li>
+                    <li>2-week barista training</li>
+                    <li>Starter equipment package</li>
+                    <li>Menu &amp; recipe playbook</li>
+                    <li>Marketing launch support</li>
+                </ul>
+                <a href="#apply" class="package-btn package-btn-outline">Apply for Starter</a>
+            </div>
+
+            <!-- Signature — Featured -->
+            <div class="package-card package-featured">
+                <div class="package-featured-label">Most Popular</div>
+                <div class="package-top">
+                    <span class="package-tier">Signature</span>
+                    <div class="package-price">
+                        <span class="price-from">From</span>
+                        <span class="price-num">$55,000</span>
+                    </div>
+                    <p class="package-ideal">Full café experience, 50–120 sqm. Our flagship format.</p>
+                </div>
+                <ul class="package-features">
+                    <li>Everything in Starter</li>
+                    <li>Interior design consultation</li>
+                    <li>4-week immersive training</li>
+                    <li>POS &amp; inventory system</li>
+                    <li>Dedicated franchise advisor</li>
+                    <li>Seasonal menu updates</li>
+                </ul>
+                <a href="#apply" class="package-btn package-btn-solid">Apply for Signature</a>
+            </div>
+
+            <!-- Elite -->
+            <div class="package-card">
+                <div class="package-top">
+                    <span class="package-tier">Elite</span>
+                    <div class="package-price">
+                        <span class="price-from">From</span>
+                        <span class="price-num">$100,000</span>
+                    </div>
+                    <p class="package-ideal">Multi-location rights or flagship 120+ sqm destinations.</p>
+                </div>
+                <ul class="package-features">
+                    <li>Everything in Signature</li>
+                    <li>Multi-location territorial rights</li>
+                    <li>Custom interior design build</li>
+                    <li>Priority supply chain access</li>
+                    <li>Co-branded marketing campaigns</li>
+                    <li>Executive-level advisory</li>
+                </ul>
+                <a href="#apply" class="package-btn package-btn-outline">Apply for Elite</a>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- ===================== SECTION 03 — PROCESS ===================== -->
+<section class="fr-section bg-dark">
+    <div class="fr-container">
+
+        <div class="fr-section-header fr-section-header-light">
+            <span class="fr-section-num fr-section-num-light">03</span>
+            <div class="fr-heading-wrap">
+                <h2 class="fr-heading fr-heading-light">The <em>Process</em></h2>
+                <p class="fr-label fr-label-light">From Application to Opening Day</p>
+            </div>
+            <div class="fr-rule fr-rule-light"></div>
+        </div>
+
+        <div class="process-steps">
+
+            <div class="process-step">
+                <div class="step-num">01</div>
+                <div class="step-content">
+                    <h3 class="step-title">Submit Application</h3>
+                    <p class="step-desc">Fill out our franchise inquiry form below. Tell us about yourself, your location, and your vision for your Catty Cafe.</p>
+                </div>
+            </div>
+
+            <div class="process-connector"></div>
+
+            <div class="process-step">
+                <div class="step-num">02</div>
+                <div class="step-content">
+                    <h3 class="step-title">Discovery Call</h3>
+                    <p class="step-desc">Our franchise team will reach out within 5 business days for a one-on-one call to discuss your goals and answer every question.</p>
+                </div>
+            </div>
+
+            <div class="process-connector"></div>
+
+            <div class="process-step">
+                <div class="step-num">03</div>
+                <div class="step-content">
+                    <h3 class="step-title">Agreement & Training</h3>
+                    <p class="step-desc">Sign your franchise agreement and begin our comprehensive onboarding program — both in-person and online.</p>
+                </div>
+            </div>
+
+            <div class="process-connector"></div>
+
+            <div class="process-step">
+                <div class="step-num">04</div>
+                <div class="step-content">
+                    <h3 class="step-title">Grand Opening</h3>
+                    <p class="step-desc">We'll be with you on day one. Our team supports your launch with marketing, operations, and hands-on guidance.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- ===================== SECTION 04 — STATS ===================== -->
+<section class="fr-stats-band">
+    <div class="fr-container">
+        <div class="stats-row">
+            <div class="stat-block">
+                <span class="stat-big">98%</span>
+                <span class="stat-desc">Franchisee satisfaction rate</span>
+            </div>
+            <div class="stat-sep"></div>
+            <div class="stat-block">
+                <span class="stat-big">18mo</span>
+                <span class="stat-desc">Average ROI timeline</span>
+            </div>
+            <div class="stat-sep"></div>
+            <div class="stat-block">
+                <span class="stat-big">3+</span>
+                <span class="stat-desc">Countries with active locations</span>
+            </div>
+            <div class="stat-sep"></div>
+            <div class="stat-block">
+                <span class="stat-big">24/7</span>
+                <span class="stat-desc">Partner support availability</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== SECTION 05 — APPLY FORM ===================== -->
+<section class="fr-section bg-white" id="apply">
+    <div class="fr-container">
+
+        <div class="fr-section-header">
+            <span class="fr-section-num">04</span>
+            <div class="fr-heading-wrap">
+                <h2 class="fr-heading">Start Your <em>Journey</em></h2>
+                <p class="fr-label">Franchise Inquiry Form</p>
+            </div>
+            <div class="fr-rule"></div>
+        </div>
+
+        <div class="apply-layout">
+
+            <div class="apply-form-wrap">
+                <form class="apply-form">
+
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" placeholder="Your full name" class="form-input">
+                        </div>
+                        <div class="form-field">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" placeholder="hello@yourmail.com" class="form-input">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label class="form-label">Phone Number</label>
+                            <input type="tel" placeholder="+855 XX XXX XXXX" class="form-input">
+                        </div>
+                        <div class="form-field">
+                            <label class="form-label">City / Country</label>
+                            <input type="text" placeholder="e.g. Phnom Penh, Cambodia" class="form-input">
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label class="form-label">Package Interest</label>
+                        <select class="form-input form-select">
+                            <option value="" disabled selected>Select a package</option>
+                            <option>Starter — From $25,000</option>
+                            <option>Signature — From $55,000</option>
+                            <option>Elite — From $100,000</option>
+                            <option>Not sure yet, want to learn more</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field">
+                        <label class="form-label">Tell Us About Yourself</label>
+                        <textarea rows="5" placeholder="Share your background, why you're excited about Catty Cafe, and any relevant experience..." class="form-input" style="resize:none;"></textarea>
+                    </div>
+
+                    <button type="submit" class="apply-submit-btn">
+                        Submit Application
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </button>
+
+                </form>
+            </div>
+
+            <div class="apply-sidebar">
+                <div class="sidebar-block">
+                    <p class="sidebar-eyebrow">Response Time</p>
+                    <p class="sidebar-val">Within 5 business days</p>
+                </div>
+                <div class="sidebar-block">
+                    <p class="sidebar-eyebrow">Minimum Investment</p>
+                    <p class="sidebar-val">From $25,000 USD</p>
+                </div>
+                <div class="sidebar-block">
+                    <p class="sidebar-eyebrow">Available Markets</p>
+                    <p class="sidebar-val">Southeast Asia, East Asia &amp; expanding</p>
+                </div>
+                <div class="sidebar-block">
+                    <p class="sidebar-eyebrow">Contact Direct</p>
+                    <p class="sidebar-val">franchise@cattycafe.com</p>
+                </div>
+                <div class="sidebar-quote">
+                    <p>"We don't just hand you a brand. We build a business together."</p>
+                    <span>— Catty Cafe Founders</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

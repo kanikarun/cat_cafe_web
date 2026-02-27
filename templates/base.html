@@ -13,7 +13,10 @@
         <div class="nav-container">
 
             <!-- Logo -->
-            <a href="{{ url_for('home') }}" class="logo">CATTY CAFE</a>
+            <a href="{{ url_for('home') }}" class="logo">
+                <img src="{{ url_for('static', filename='image/element/logo.png') }}" alt="Catty Cafe Logo" class="logo-img">
+                <span class="logo-text-nav">CATTY CAFE</span>
+            </a>
 
             <!-- Hamburger Toggle (mobile only) -->
             <div class="nav-right-mobile">
@@ -38,7 +41,7 @@
                     <li><a href="{{ url_for('home') }}">Home</a></li>
                     <li><a href="{{ url_for('product') }}">Product</a></li>
                     <li><a href="{{ url_for('about_us') }}">About Us</a></li>
-                    <li><a href="#">Franchise</a></li>
+                    <li><a href="{{ url_for('franchise') }}">Franchise</a></li>
                 </ul>
 
                 <div class="nav-actions">

@@ -16,11 +16,21 @@
             <a href="{{ url_for('home') }}" class="logo">CATTY CAFE</a>
 
             <!-- Hamburger Toggle (mobile only) -->
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <div class="nav-right-mobile">
+                <a href="/cart" class="nav-cart" aria-label="Cart">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c.51 0 .955-.343 1.087-.835l1.458-5.467A1.125 1.125 0 0017.43 8.25H5.907l-.396-1.485A1.125 1.125 0 004.424 6H2.25" />
+                        <circle cx="9" cy="20.25" r=".75" fill="currentColor" stroke="none"/>
+                        <circle cx="18.75" cy="20.25" r=".75" fill="currentColor" stroke="none"/>
+                    </svg>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </a>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
 
             <!-- Nav Menu -->
             <div class="nav-menu" id="navMenu">
@@ -32,6 +42,14 @@
                 </ul>
 
                 <div class="nav-actions">
+                    <a href="/cart" class="nav-cart" aria-label="Cart">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c.51 0 .955-.343 1.087-.835l1.458-5.467A1.125 1.125 0 0017.43 8.25H5.907l-.396-1.485A1.125 1.125 0 004.424 6H2.25" />
+                            <circle cx="9" cy="20.25" r=".75" fill="currentColor" stroke="none"/>
+                            <circle cx="18.75" cy="20.25" r=".75" fill="currentColor" stroke="none"/>
+                        </svg>
+                        <span class="cart-badge" id="cartBadgeDesktop">0</span>
+                    </a>
                     <a href="/login" class="nav-btn nav-btn-ghost">Log In</a>
                     <a href="/register" class="nav-btn nav-btn-solid">Get Started</a>
                 </div>
